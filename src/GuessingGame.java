@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -25,12 +26,23 @@ public class GuessingGame {
         // Create and initialize count variable that counts user's trials
         int count = 0;
         while (true){
-            System.out.print("Your guess? ");
-            int userNumb = Integer.parseInt(inp.nextLine());
+            int userGuess;
+            try {
+                System.out.print("Your guess? ");
+                userGuess= Integer.parseInt(inp.nextLine());
+            } catch ( InputMismatchException e){
+                String bad_input = inp.next();   // need to progress past bad input
+                System.out.println("That's not an integer. Try again");
+                continue;
+            }
+            if (userGuess < 1 || userGuess > 100){
+                System.out.println(userGuess + " is not a valid number, try again.");
+                continue;
+            }
             count ++;
-            if (userNumb > numb){
+            if (userGuess > numb){
                 System.out.println("Your guess is too high, try again");
-            }else if (userNumb < numb){
+            }else if (userGuess < numb){
                 System.out.println("Your guess is too low, try again");
             } else {
                 System.out.println("Well done, "+name+"! You found my number within "+count+" attempts!");

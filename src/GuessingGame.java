@@ -1,3 +1,6 @@
+import java.util.Scanner;
+import java.util.Random;
+
 public class GuessingGame {
     public GuessingGame(){
     }
@@ -7,6 +10,32 @@ public class GuessingGame {
         // Greet the user
         System.out.println("Java Game\n"+greet);
 
+        System.out.print("(type in your name here): ");
+        // getting input from the user
+        Scanner inp = new Scanner(System.in);
+        String name = inp.nextLine();
 
+        // Create an instance of the Random object
+        Random rand = new Random();
+        //  Invoke method nextInt and pass in limit number value to variable numb
+        int numb = rand.nextInt(100);
+
+        // Engage with user to guess the random number
+        System.out.println(name+" , I'm thinking of a number between 1 and 100.\nCan you guess that number? ");
+        // Create and initialize count variable that counts user's trials
+        int count = 0;
+        while (true){
+            System.out.print("Your guess? ");
+            int userNumb = Integer.parseInt(inp.nextLine());
+            count ++;
+            if (userNumb > numb){
+                System.out.println("Your guess is too high, try again");
+            }else if (userNumb < numb){
+                System.out.println("Your guess is too low, try again");
+            } else {
+                System.out.println("Well done, "+name+"! You found my number within "+count+" attempts!");
+                break;
+            }
+        }
     }
 }

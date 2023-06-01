@@ -31,6 +31,9 @@ public class Mars {
 
         // Invoke landingCheck and save new value to variable landing
         landing = landingCheck(45);
+
+        // Invoke class object GuessingGame()
+        new GuessingGame();
     }
 
     /* LOOPING FUNCTION*/

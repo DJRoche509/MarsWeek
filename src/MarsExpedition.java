@@ -23,7 +23,7 @@ public class MarsExpedition {
         // Get user's name and other inputs
         String name = input.nextLine();
         Thread.sleep(500);
-        System.out.println("Hi, "+name+" -- Welcome to the Expedition prep program. Are you ready to head out into the new world?");
+        System.out.println("Hi, "+name+" -- Welcome to the Expedition program. Are you ready to head out into the new world?");
         // Get user's choice and convert it to lower case
         String choice ;
 
@@ -55,6 +55,37 @@ public class MarsExpedition {
                 peopleCount = 2;
             } else if (peopleCount == 2) {
                 System.out.println(printPause("That's a perfect crew size. Good job!"));
+            }
+
+            // Ask user if he/she wants snack
+            System.out.println(printPause("Now, You are allowed to bring one snack with you. What do you want to bring?"));
+            String snack = input.next();
+            System.out.println(printPause("Nice choice, you will be bringing a "+ snack+ " with you."));
+
+            // Ask the user to choose a vehicle
+            System.out.println(printPause("You may choose vehicles from the following options:" +
+                    "\nA: A MarsWagen Tiguan" +
+                    "\nB: A Lexus Expedition" +
+                    "\nC: A Toyota Prado"));
+            String carChoice = input.next();
+
+            // Set conditional statements to get user's equivalent pick.
+            if (carChoice.equalsIgnoreCase("A")){
+                carChoice = "MarsWagen Tiguan";
+            } else if (carChoice.equalsIgnoreCase("B")){
+                carChoice = "Lexus Expedition";
+            } else {
+                carChoice = "Toyota Prado";
+            }
+
+            String [] countdown = {"Exploration team heads out in","5....","4....","3....","2....","1....","GO GO GO!"};
+            // Log out user's info and possessions
+            System.out.println(printPause("Okayyyy...Your expedition team is now ready" +
+                    "\nLed by " + name + " with " + peopleCount + " teammates" +
+                    "\nand a " + snack + " to munch on." +
+                    "\n\nTo explore the surface of Mars using " + carChoice + "." ));
+            for (int c =0;c < countdown.length; c++){
+                System.out.println(printPause(countdown[c]));
             }
             break;
         }

@@ -3,10 +3,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class MarsExpedition {
-    public MarsExpedition(){
-    }
-
-    public static void main(String[] args) throws InterruptedException {
+    public MarsExpedition() throws InterruptedException{
         Scanner input = new Scanner(System.in);
 
         // Welcome and boot up message to the user.

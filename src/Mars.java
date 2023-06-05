@@ -34,6 +34,9 @@ public class Mars {
 
         // Invoke class object GuessingGame()
         new GuessingGame();
+
+        // Invoke class object MarsExpedition()
+        new MarsExpedition();
     }
 
     /* LOOPING FUNCTION*/

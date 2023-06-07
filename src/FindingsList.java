@@ -1,4 +1,9 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Iterator;
+//import MarsExpedition;
 
 public class FindingsList {
 
@@ -48,6 +53,23 @@ public class FindingsList {
             System.out.println("Fossil: " + fossilChoice + "\nDescription: " + fossilDirectory.get(fossilChoice));
         } else if (fossilChoice.equalsIgnoreCase("Tooth")) {
             System.out.println("Fossil: " + fossilChoice + "\nDescription: " + fossilDirectory.get(fossilChoice));
+        }
+
+
+        Thread.sleep(700);
+
+        HashSet<String> supplies = new HashSet<>();
+
+        supplies.add("Teleporter");
+        supplies.add("Stun gun");
+        supplies.add("Insta-Heal Capsules");
+
+        supplies.remove("Stun gun");
+
+        Iterator itr = supplies.iterator();
+
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
         }
     }
 
